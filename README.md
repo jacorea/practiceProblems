@@ -1,1 +1,7 @@
-"# practiceProblems" 
+***practiceProblems***
+
+###### FizzBuzz
+###### Sum Array function
+
+
+

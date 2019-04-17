@@ -1,17 +1,6 @@
-
-// var names = ["Jon", "Tom"]
-// var emptyArray = []
-
-// function likes(names) {
-// if(names === [] ) {
-
-//     console.log( "no one likes this")
-//     }
-// }
-  
-// likes(names);
-
-// Write a method sum (sum_array in python, SumArray in C#) that takes an array of numbers and returns the sum of the numbers. 
+//Problem: Write a method sum (sum_array in python, SumArray in C#) that takes an array of numbers and returns the sum of the numbers. 
+//Date: 16 April, 2019
+//Completed By: Jonathan Corea
 
 //Problem # 1 - Sum of an Array
 //Number array variable 
@@ -27,7 +16,7 @@ const sum = numbers.reduce(getSum);
 //Finally, logging the sum
 // console.log(sum)
 
-//Problem #1 - Sum of an Array (For Loop)
+//Problem #1 - Sum of an Array using a For Loop
 
 var numbers = [10, 20, 30, -1] // sums to 100
 //function that adds numbers in an array
@@ -40,17 +29,5 @@ var sum2 = 0;
     console.log(sum2)
 }
 
+//Calling of sumArray function that takes in an array of numbers and logs sum total of all numbers in the array.
 sumArray(numbers)
-
-
-for(let i=0;i<=100; i++){
-    if(i%3===0 & i%5===0){
-        console.log("FizzBuzz")
-    }else if(i%3 === 0){
-        console.log("Fizz")
-    } else if(i%5 ===0){
-        console.log("Buzz")
-    } else {
-        console.log(i)
-    }
-}
