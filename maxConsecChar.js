@@ -1,41 +1,54 @@
 //find the most repeated, consecutive character in a string
 
-//Test case #1 - "aabbbaacc"
 
 const maxChar = (string) => {
-
+    
     //variables
-    let mChar = ""; //maximum repeated character
     let mCount = 0; //maximum repeated count of mChar
-    let max= {}; //store maximums in an object
-
+    let maxChar="";
+    let charCount = 0;
+    let char = "";
+    
+    if(string === '') {
+        return "please input a string"
+    }
+    
     for(let i=0; i<string.length;i++) {
-        //destructuring of mChar in max object
-        let mChar= string[i];
-
-        if(max[mChar] === undefined) {
-            mChar = string[i];
-            max[mChar] =1;
-        } else if(mChar !== string[i-1]) {
-            max[mChar] = 1;
-        } else if(mChar === string[i]) {
-           max[mChar] +=1
+        //destructuring of mChar in max object        
+        if(string.length === 1){
+            return "please input a longer string, no consecutive characters found.";
+        } else if(char === "") {
+            char = string[i];
+            charCount = 1;
+        } else if(char !== string[i]) {
+            char = string[i]
+            charCount = 1;
+        } else if(char === string[i-1]) {
+            charCount += 1;
+            if(charCount >= mCount) {
+                mCount = charCount;
+                maxChar = char;
+            }
         } 
-    }  console.log({max})
-    for(var elem in max) {
-        if(mCount === 0) {
-            mCount = max[elem]
-            mChar = elem
-        } else if(max[elem] > mCount) {
-            mCount = max[elem]
-            mChar = elem
-        }
-    } return {mChar, mCount};
+    } return {mCount,maxChar}
 } 
 
 
 
-console.log(maxChar("aabbcccddcccccaaaaaa"))
-//Currently determines max consecutive character in a string, but if there's mulitple strings with the same mCount it takes the latest character rather than giving all characters with the same count. Also, need to implement test conditions where there it test lenght of string and 2 character strings.
+// // Test Cases
+//     //Case 1: empty string
+        console.log(maxChar(""));
+//     //Case 2: one character string
+        console.log(maxChar("a"));
+//     //Case 3: Max consecutive character in the beginning of string
+        console.log(maxChar("aaabbccc"));
+//     //Case 4: Max consecutive character repeated later in the string
+        console.log(maxChar("aaabbaaaa"));
+    
+
+//COMMENTS:
+    //Currently determines max consecutive character in a string, but if there's mulitple characters with the same mCount it takes the latest character rather than giving all characters with the same count. 
+    //implemented conditions with empty string or string with only one character.
 
 
+    
